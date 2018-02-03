@@ -1,21 +1,15 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { render } from 'react-dom';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
-    );
-  }
-}
+import config from './config';
+import App from './components/App';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+render((
+  <App
+    apiKey={config.API_KEY}
+    sessionId={config.SESSION_ID}
+    token={config.TOKEN}
+    loadingDelegate={<div>Loading...</div>}
+    opentokClientUrl="https://static.opentok.com/v2/js/opentok.min.js"
+  />
+), document.getElementById('content'));
