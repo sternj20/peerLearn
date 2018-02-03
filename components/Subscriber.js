@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { OTSubscriber } from '../../src'
+import { OTSubscriber } from '../src'
 import CheckBox from './CheckBox';
 
 export default class Subscriber extends Component {

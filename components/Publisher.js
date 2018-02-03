@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { OTPublisher } from '../../src'
+import { OTPublisher } from '../src'
 import RadioButtons from './RadioButtons';
 import CheckBox from './CheckBox';
 
