@@ -3,6 +3,7 @@
   "version": "0.7.0",
   "description": "React components for OpenTok.js",
   "main": "dist/index.js",
+  "homepage": "https://JaneXiaojingGuo.github.io/peerLearn",
   "scripts": {
     "start": "python -m SimpleHTTPServer",
     "windows": "python -m http.server 8000",
@@ -10,9 +11,11 @@
     "test": "karma start",
     "unit": "karma start --single-run",
     "prepublish": "npm run build",
-    "build": "babel src --out-dir dist",
+    "build": "browserify -o bundle.js app.js",
     "lint": "eslint src test",
-    "example": "browserify -o bundle.js app.js && python -m SimpleHTTPServer"
+    "example": "browserify -o bundle.js app.js && python -m SimpleHTTPServer",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d ."
   },
   "keywords": [
     "tokbox",
@@ -32,6 +35,7 @@
     "react": "^15.5.0"
   },
   "dependencies": {
+    "gh-pages": "^1.1.0",
     "lodash": "^4.13.1",
     "prop-types": "^15.5.10",
     "react-display-name": "^0.2.0",
