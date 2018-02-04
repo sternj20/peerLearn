@@ -30,7 +30,7 @@ export default class Root extends Component{
         super(props)
         this.state = {
             hasCredentials: false,
-            auth: true,
+            auth: false,
             loading: true
         }
     }

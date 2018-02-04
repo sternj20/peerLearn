@@ -577,7 +577,7 @@ var Root = function (_Component) {
 
         _this.state = {
             hasCredentials: false,
-            auth: true,
+            auth: false,
             loading: true
         };
         return _this;
