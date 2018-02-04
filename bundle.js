@@ -1,1 +1,1 @@
-console.error("Error: Cannot find module './components/App' from 'C:\\Users\\admin\\Documents\\GitHub\\peerLearn'");
+console.error("Error: Cannot find module '/Users/harsh/hackathons/hack_mental_health/peer_learn/app.js' from '/Users/harsh/hackathons/hack_mental_health/peer_learn'");
