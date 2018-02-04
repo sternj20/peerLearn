@@ -13,9 +13,9 @@ export default class VideoPage extends Component {
                 <div>
                     <Video
                         className="video-screen"
-                        apiKey={config.API_KEY}
-                        sessionId={config.SESSION_ID}
-                        token={config.TOKEN}
+                        apiKey={this.props.apiKey}
+                        sessionId={this.props.sessionId}
+                        token={this.props.token}
                         loadingDelegate={<div>Loading...</div>}
                         opentokClientUrl="https://static.opentok.com/v2/js/opentok.min.js"
                     />
