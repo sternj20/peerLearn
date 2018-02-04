@@ -4,6 +4,8 @@
   "description": "React components for OpenTok.js",
   "main": "dist/index.js",
   "scripts": {
+    "start":"python -m SimpleHTTPServer",
+    "watch":"watchify -o bundle.js app.js",
     "test": "karma start",
     "unit": "karma start --single-run",
     "prepublish": "npm run build",
