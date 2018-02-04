@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 
 import config from '../config';
 import Splash from "./Splash/Splash.js"
-import Video from './video_components/Video';
+import VideoPage from './VideoPage/VideoPage';
 
 export default class Root extends Component{
     constructor(props){
@@ -14,13 +14,7 @@ export default class Root extends Component{
         return (
             <div>
                 <Splash/>
-                {/* <Video
-                    apiKey={config.API_KEY}
-                    sessionId={config.SESSION_ID}
-                    token={config.TOKEN}
-                    loadingDelegate={<div>Loading...</div>}
-                    opentokClientUrl="https://static.opentok.com/v2/js/opentok.min.js"
-                /> */}
+                <VideoPage />
             </div>
         )
     }

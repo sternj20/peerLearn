@@ -77,7 +77,7 @@ export default class OTSession extends Component {
       ) : child),
     );
 
-    return <div>{childrenWithProps}</div>;
+    return <div className="video-call">{childrenWithProps}</div>;
   }
 }
 

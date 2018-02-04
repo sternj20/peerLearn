@@ -39,17 +39,20 @@ export default class Subscriber extends Component {
           }}
           onError={this.onError}
         />
-        <CheckBox
-          label="Subscribe to Audio"
-          initialChecked={this.state.audio}
-          onChange={this.setAudio}
-        />
-        <CheckBox
-          label="Subscribe to Video"
-          initialChecked={this.state.video}
-          onChange={this.setVideo}
-        />
+        
       </div>
     );
   }
 }
+
+
+// <CheckBox
+//   label="Subscribe to Audio"
+//   initialChecked={this.state.audio}
+//   onChange={this.setAudio}
+// />
+//   <CheckBox
+//     label="Subscribe to Video"
+//     initialChecked={this.state.video}
+//     onChange={this.setVideo}
+//   />
