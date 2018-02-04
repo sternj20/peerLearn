@@ -22,6 +22,7 @@ export default class Root extends Component{
                     apiKey: res.apiKey,
                     sessionId: res.sessionId,
                     token: res.token,
+                    counter: res.counter,
                     hasCredentials: true
                 });
             })
@@ -35,7 +36,7 @@ export default class Root extends Component{
         return (
             <div>
                 <Splash/>
-                <VideoPage apiKey={this.state.apiKey} sessionId={this.state.sessionId} token={this.state.token}/>
+                <VideoPage apiKey={this.state.apiKey} sessionId={this.state.sessionId} token={this.state.token} counter={this.state.counter}/>
                 {/* <Splash/> */}
                 {/* <DescribePartner/> */}
                 {/* <LearningOptions/> */}

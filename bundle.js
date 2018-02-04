@@ -343,6 +343,7 @@ var Root = function (_Component) {
                     apiKey: res.apiKey,
                     sessionId: res.sessionId,
                     token: res.token,
+                    counter: res.counter,
                     hasCredentials: true
                 });
             });
@@ -357,7 +358,7 @@ var Root = function (_Component) {
                 'div',
                 null,
                 _react2.default.createElement(_Splash2.default, null),
-                _react2.default.createElement(_VideoPage2.default, { apiKey: this.state.apiKey, sessionId: this.state.sessionId, token: this.state.token })
+                _react2.default.createElement(_VideoPage2.default, { apiKey: this.state.apiKey, sessionId: this.state.sessionId, token: this.state.token, counter: this.state.counter })
             );
         }
     }]);
