@@ -2,8 +2,11 @@ import React, {Component} from 'react';
 // import { render } from 'react-dom';
 
 import config from '../config';
-import Splash from "./Splash/Splash.js"
 import VideoPage from './VideoPage/VideoPage';
+import Splash from "./Splash/Splash.js"
+import DescribePartner from "./DescribePartner/DescribePartner";
+import LearningOptions from "./LearningOptions/LearningOptions";
+
 
 export default class Root extends Component{
     constructor(props){
@@ -15,6 +18,9 @@ export default class Root extends Component{
             <div>
                 <Splash/>
                 <VideoPage />
+                {/* <Splash/> */}
+                {/* <DescribePartner/> */}
+                {/* <LearningOptions/> */}
             </div>
         )
     }
