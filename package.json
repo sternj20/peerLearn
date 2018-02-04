@@ -6,6 +6,7 @@
   "main": "dist/index.js",
   "scripts": {
     "start":"python -m SimpleHTTPServer",
+    "windows":"python -m http.server 8000",
     "watch":"watchify -o bundle.js app.js",
     "test": "karma start",
     "unit": "karma start --single-run",
