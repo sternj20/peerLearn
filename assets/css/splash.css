@@ -1,0 +1,22 @@
+.splashContainer {
+    background: #00BFFF;
+}
+
+.imgs{
+    width:100%;
+    text-align:center;
+    margin-top:20px;
+}
+
+.splashText{
+    color:white;
+}
+
+.btn-group-lg>.btn, .btn-lg{
+    font-size:20px;
+    width:100%;
+}
+.header{
+    width:100%
+}
+
