@@ -1,4 +1,5 @@
 {
+
   "name": "opentok-react",
   "version": "0.7.0",
   "description": "React components for OpenTok.js",
