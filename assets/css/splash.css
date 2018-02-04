@@ -12,8 +12,9 @@
     color:white;
 }
 
-.demoBtn{
-    font-size:40px;
+.btn-group-lg>.btn, .btn-lg{
+    font-size:20px;
+    width:100%;
 }
 .header{
     width:100%
