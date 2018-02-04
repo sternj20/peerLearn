@@ -35,3 +35,11 @@ h2{
     color:white;
 }
 
+.user{
+    display:none;
+}
+
+li{
+    font-size:22px;
+    color:white;
+}
