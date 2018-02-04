@@ -322,32 +322,6 @@ var LearningOptions = function LearningOptions() {
                     "Assertive role play"
                 )
             )
-        ),
-        _react2.default.createElement(
-            "div",
-            { className: "row" },
-            _react2.default.createElement(
-                "div",
-                { className: "col-sm-12" },
-                _react2.default.createElement(
-                    "h2",
-                    null,
-                    "Choose activity"
-                )
-            )
-        ),
-        _react2.default.createElement(
-            "div",
-            { className: "row" },
-            _react2.default.createElement(
-                "btn",
-                { className: "btn-lg col-sm-10" },
-                _react2.default.createElement(
-                    _reactRouterDom.Link,
-                    { to: "/loading" },
-                    "Next"
-                )
-            )
         )
     );
 };
