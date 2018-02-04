@@ -8,6 +8,8 @@ import DescribePartner from "./DescribePartner/DescribePartner";
 import LearningOptions from "./LearningOptions/LearningOptions";
 import Loader from "./Loader/Loader";
 import MeditateInstruct from "./MeditateInstruct/MeditateInstruct"
+import AssertInstruct from "./AssertInstruct/AssertInstruct"
+
 
 const renderMergedProps = (component, ...rest) => {
   const finalProps = Object.assign({}, ...rest);
@@ -71,6 +73,7 @@ export default class Root extends Component{
                     <Route path="/options" component={LearningOptions}/>
                     <Route path="/loading" component={Loader}/>
                     <Route path="/meditate" component={MeditateInstruct}/>
+                    <Route path="/assert" component={AssertInstruct}/>
                     <PropsRoute path="/video" component={VideoPage} apiKey={this.state.apiKey} sessionId={this.state.sessionId} token={this.state.token}/>
                 </Switch>
             )

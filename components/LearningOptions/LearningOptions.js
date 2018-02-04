@@ -13,7 +13,7 @@ const LearningOptions = () => {
             
                 <div className="row btnContainer">
                     <btn className="btn-lg col-sm-10"><Link to="/meditate">Meditate</Link></btn>
-                    <btn className="btn-lg col-sm-10">Assertive role play</btn>
+                    <btn className="btn-lg col-sm-10"><Link to="/assert">Assertive role play</Link></btn>
                 </div>
             <div className="row">                
                 <div className="col-sm-12"><h2>Choose activity</h2></div>
