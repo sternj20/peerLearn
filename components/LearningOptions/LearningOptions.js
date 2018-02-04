@@ -1,5 +1,5 @@
 import React from "react";
-import {Link, Redirect} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 
 const LearningOptions = () => {
@@ -12,7 +12,7 @@ const LearningOptions = () => {
             </div>
             
                 <div className="row btnContainer">
-                    <btn className="btn-lg col-sm-10">Meditate</btn>
+                    <btn className="btn-lg col-sm-10"><Link to="/meditate">Meditate</Link></btn>
                     <btn className="btn-lg col-sm-10">Assertive role play</btn>
                 </div>
             <div className="row">                
