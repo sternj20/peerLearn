@@ -325,17 +325,39 @@ var Root = function (_Component) {
     function Root(props) {
         _classCallCheck(this, Root);
 
-        return _possibleConstructorReturn(this, (Root.__proto__ || Object.getPrototypeOf(Root)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (Root.__proto__ || Object.getPrototypeOf(Root)).call(this, props));
+
+        _this.state = {
+            hasCredentials: false
+        };
+        return _this;
     }
 
     _createClass(Root, [{
+        key: 'componentWillMount',
+        value: function componentWillMount() {
+            var _this2 = this;
+
+            (0, _config2.default)().then(function (res) {
+                _this2.setState({
+                    apiKey: res.apiKey,
+                    sessionId: res.sessionId,
+                    token: res.token,
+                    hasCredentials: true
+                });
+            });
+        }
+    }, {
         key: 'render',
         value: function render() {
+            if (!this.state.hasCredentials) {
+                return _react2.default.createElement('div', null);
+            }
             return _react2.default.createElement(
                 'div',
                 null,
                 _react2.default.createElement(_Splash2.default, null),
-                _react2.default.createElement(_VideoPage2.default, null)
+                _react2.default.createElement(_VideoPage2.default, { apiKey: this.state.apiKey, sessionId: this.state.sessionId, token: this.state.token })
             );
         }
     }]);
@@ -469,9 +491,9 @@ var VideoPage = function (_Component) {
                     null,
                     _react2.default.createElement(_Video2.default, {
                         className: 'video-screen',
-                        apiKey: _config2.default.API_KEY,
-                        sessionId: _config2.default.SESSION_ID,
-                        token: _config2.default.TOKEN,
+                        apiKey: this.props.apiKey,
+                        sessionId: this.props.sessionId,
+                        token: this.props.token,
                         loadingDelegate: _react2.default.createElement(
                             'div',
                             null,
@@ -680,7 +702,8 @@ var OTPublisher = function (_Component) {
           _this5.props.onError(err);
         }
       });
-
+      properties.width = 100;
+      properties.height = 100;
       var publisher = OT.initPublisher(container, properties, function (err) {
         if (publisherId !== _this5.publisherId) {
           // Either this publisher has been recreated or the
@@ -714,7 +737,7 @@ var OTPublisher = function (_Component) {
 
       return _react2.default.createElement('div', { ref: function ref(node) {
           return _this6.node = node;
-        } });
+        }, className: 'my-video' });
     }
   }]);
 
@@ -743,7 +766,9 @@ OTPublisher.propTypes = {
 
 OTPublisher.defaultProps = {
   session: null,
-  properties: {},
+  properties: {
+    height: 100, width: 100
+  },
   eventHandlers: null,
   onInit: null,
   onPublish: null,
@@ -1971,12 +1996,21 @@ exports.default = (0, _src.preloadScript)(App);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = {
-  API_KEY: '46052232',
-  SESSION_ID: '1_MX40NjA1MjIzMn5-MTUxNzY5MTEzMDg1MX5LOEFEYjFEdzdFYTBwbHl5YWNoMDNGcHd-fg',
-  TOKEN: 'T1==cGFydG5lcl9pZD00NjA1MjIzMiZzaWc9MjNmNDMzM2Y3MjNhNTJmODk1MWZhZDhlOTExMDFiYzMzODg5MTgxZTpzZXNzaW9uX2lkPTFfTVg0ME5qQTFNakl6TW41LU1UVXhOelk1TVRFek1EZzFNWDVMT0VGRVlqRkVkemRGWVRCd2JIbDVZV05vTUROR2NIZC1mZyZjcmVhdGVfdGltZT0xNTE3NjkxMTYzJm5vbmNlPTAuMDY3MjE4NTA3NDQzMDY0MDEmcm9sZT1wdWJsaXNoZXImZXhwaXJlX3RpbWU9MTUyMDI4MzE2MiZpbml0aWFsX2xheW91dF9jbGFzc19saXN0PQ=='
-  // CHROME_EXTENSION_ID: 'baz'
-};
+exports.default = fetchSession;
+function fetchSession() {
+  return fetch('https://peer-learn.herokuapp.com/room/1').then(function (config) {
+    return config.json();
+  }).catch(function (error) {
+    console.log('error', error);
+  });
+}
+
+// export default {
+//   API_KEY: '46052232',
+//   SESSION_ID: '1_MX40NjA1MjIzMn5-MTUxNzY5MTEzMDg1MX5LOEFEYjFEdzdFYTBwbHl5YWNoMDNGcHd-fg',
+//   TOKEN: 'T1==cGFydG5lcl9pZD00NjA1MjIzMiZzaWc9MjNmNDMzM2Y3MjNhNTJmODk1MWZhZDhlOTExMDFiYzMzODg5MTgxZTpzZXNzaW9uX2lkPTFfTVg0ME5qQTFNakl6TW41LU1UVXhOelk1TVRFek1EZzFNWDVMT0VGRVlqRkVkemRGWVRCd2JIbDVZV05vTUROR2NIZC1mZyZjcmVhdGVfdGltZT0xNTE3NjkxMTYzJm5vbmNlPTAuMDY3MjE4NTA3NDQzMDY0MDEmcm9sZT1wdWJsaXNoZXImZXhwaXJlX3RpbWU9MTUyMDI4MzE2MiZpbml0aWFsX2xheW91dF9jbGFzc19saXN0PQ==',
+//   // CHROME_EXTENSION_ID: 'baz'
+// };
 
 },{}],21:[function(require,module,exports){
 (function (process){
