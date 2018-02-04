@@ -1,4 +1,14 @@
-import React from "react";
+import React  from "react";
+import users from "../src/user.js"
+const login = () => {
+  let userName = document.querySelector('.user').value;
+  let userPw = document.querySelector('.pw').value;
+  if(users[userName] === userPw){
+    console.log('you shall pass')
+  } else {
+    console.log('you shall not pass')
+  }
+}
 
 const Splash = () => {
     return (
@@ -17,9 +27,20 @@ const Splash = () => {
                 <div className="splashText col-md-12">
                     <h2><i>Personal development with like-minded people to grow together</i></h2>
                 </div>
-                <div className="buttons align-middle col-md-12">
-                    <button className="btn-lg demoBtn col-md-6 footer">Demo One</button>
-                    <button className="btn-lg demoBtn col-md-6 footer">Demo two</button>
+
+                
+
+
+                <div className="login col-md-12">
+                <div>
+                    <label><b>Username</b></label>
+                    <input type="text" className="user" placeholder="Enter Username" name="uname" required></input>
+                </div>
+                <div>                
+                    <label><b>Password</b></label>
+                    <input type="password" className="pw" placeholder="Enter Password" name="psw" required></input>
+                </div>
+                    <button className="btn-lg demoBtn col-md-6 footer" onClick={login}>Login</button>
                 </div>
             </div>
          </div>
