@@ -8,6 +8,7 @@ const LearningOptions = () => {
                     <h1>What activity do you want to work on?</h1>
                 </div>
             </div>
+            
                 <div className="row btnContainer">
                     <btn className="col-sm-10">Meditate</btn>
                     <btn className="col-sm-10">Assertive role play</btn>
