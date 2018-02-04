@@ -1,1 +1,1 @@
-console.error("Error: Cannot find module './DescribePartner/DescribePartner' from 'C:\\Users\\admin\\Documents\\GitHub\\peerLearn\\components'");
+console.error("SyntaxError: C:/Users/admin/Documents/GitHub/peerLearn/components/Root.js: Unexpected token (5:1) while parsing file: C:\\Users\\admin\\Documents\\GitHub\\peerLearn\\components\\Root.js");
