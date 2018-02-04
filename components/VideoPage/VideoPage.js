@@ -11,7 +11,6 @@ export default class VideoPage extends Component {
         return (
             <div>
                 <div>
-                    
                     <Video
                         className="video-screen"
                         apiKey={config.API_KEY}

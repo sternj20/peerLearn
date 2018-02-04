@@ -70,6 +70,7 @@ var Root = function (_Component) {
             return _react2.default.createElement(
                 'div',
                 null,
+                _react2.default.createElement(_Splash2.default, null),
                 _react2.default.createElement(_VideoPage2.default, null)
             );
         }

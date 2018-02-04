@@ -13,7 +13,7 @@ export default class Root extends Component{
     render(){
         return (
             <div>
-                {/* <Splash/> */}
+                <Splash/>
                 <VideoPage />
             </div>
         )
