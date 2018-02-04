@@ -38,3 +38,8 @@ h2{
 .user{
     display:none;
 }
+
+li{
+    font-size:22px;
+    color:white;
+}

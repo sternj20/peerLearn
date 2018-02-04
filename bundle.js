@@ -38,6 +38,8 @@ var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouterDom = require("react-router-dom");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var AssertInstruct = function AssertInstruct() {
@@ -65,22 +67,31 @@ var AssertInstruct = function AssertInstruct() {
 			_react2.default.createElement(
 				"li",
 				null,
-				"4. For person A: make person B\u2019s feared request to him/her. For person B: respond with an emphatic \u201Cabsolutely not!\u201D, do not worry about sounding angry or rude, it\u2019s important to internalize you can say that, while it may not be ideal, it\u2019s not catastrophic either. Pay attention to your body sensations, and have kind thoughts towards yourself."
+				"For person A: make person B\u2019s feared request to him/her. For person B: respond with an emphatic \u201Cabsolutely not!\u201D, do not worry about sounding angry or rude, it\u2019s important to internalize you can say that, while it may not be ideal, it\u2019s not catastrophic either. Pay attention to your body sensations, and have kind thoughts towards yourself."
 			),
 			_react2.default.createElement(
 				"li",
 				null,
-				"5. For person A: make person B\u2019s feared request to him/her again. For person B: respond with the diplomatic response in step 3; strive for a neutral, friendly but unapologetic tone. Again, pay attention to your body sensations, and have kind thoughts towards yourself."
+				"For person A: make person B\u2019s feared request to him/her again. For person B: respond with the diplomatic response in step 3; strive for a neutral, friendly but unapologetic tone. Again, pay attention to your body sensations, and have kind thoughts towards yourself."
 			),
 			_react2.default.createElement(
 				"li",
 				null,
-				"6. Switch roles and repeat steps 4 and 5."
+				"Switch roles and repeat steps 4 and 5."
 			),
 			_react2.default.createElement(
 				"li",
 				null,
-				"7. Praise each other on being assertive, e.g. \u201Cgreat job standing up for yourself!\u201D Share other thoughts you have for the exercise."
+				"Praise each other on being assertive, e.g. \u201Cgreat job standing up for yourself!\u201D Share other thoughts you have for the exercise."
+			)
+		),
+		_react2.default.createElement(
+			"btn",
+			{ className: "btn-lg col-sm-10" },
+			_react2.default.createElement(
+				_reactRouterDom.Link,
+				{ to: "/loading" },
+				"Next"
 			)
 		)
 	);
@@ -88,7 +99,7 @@ var AssertInstruct = function AssertInstruct() {
 
 exports.default = AssertInstruct;
 
-},{"react":260}],3:[function(require,module,exports){
+},{"react":260,"react-router-dom":223}],3:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -408,6 +419,8 @@ var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouterDom = require("react-router-dom");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var MeditateInstruct = function MeditateInstruct() {
@@ -446,14 +459,18 @@ var MeditateInstruct = function MeditateInstruct() {
 		_react2.default.createElement(
 			"btn",
 			{ className: "btn-lg col-sm-10" },
-			"Next"
+			_react2.default.createElement(
+				_reactRouterDom.Link,
+				{ to: "/loading" },
+				"Next"
+			)
 		)
 	);
 };
 
 exports.default = MeditateInstruct;
 
-},{"react":260}],7:[function(require,module,exports){
+},{"react":260,"react-router-dom":223}],7:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

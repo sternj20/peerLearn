@@ -1,5 +1,5 @@
 import React from "react";
-
+import {Link} from "react-router-dom";
 const MeditateInstruct = () => {
 	return (
 		<div>
@@ -10,7 +10,7 @@ const MeditateInstruct = () => {
 				<li>Close your eyes. Check in with your body and pay attention to your feelings and physical sensations. Ideally you would feel warm and at peace. But whatever feelings you have, honor them as legitimate.</li>
 				<li>Share how the exercise went with each other.</li>
 			</ol>
-       <btn className="btn-lg col-sm-10">Next</btn>
+       <btn className="btn-lg col-sm-10"><Link to="/loading">Next</Link></btn>
 		</div>
 	)
 }
