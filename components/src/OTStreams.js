@@ -19,7 +19,7 @@ export default function OTStreams(props) {
     ) : child),
   ) : null;
 
-  return <div>{childrenWithProps}</div>;
+  return <div className="their-video">{childrenWithProps}</div>;
 }
 
 OTStreams.propTypes = {

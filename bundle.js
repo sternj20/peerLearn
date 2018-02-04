@@ -66,7 +66,6 @@ var Root = function (_Component) {
             return _react2.default.createElement(
                 'div',
                 null,
-                'Test2',
                 _react2.default.createElement(_Video2.default, {
                     apiKey: _config2.default.API_KEY,
                     sessionId: _config2.default.SESSION_ID,
@@ -278,7 +277,8 @@ var OTPublisher = function (_Component) {
           _this5.props.onError(err);
         }
       });
-
+      properties.width = 100;
+      properties.height = 100;
       var publisher = OT.initPublisher(container, properties, function (err) {
         if (publisherId !== _this5.publisherId) {
           // Either this publisher has been recreated or the
@@ -312,7 +312,7 @@ var OTPublisher = function (_Component) {
 
       return _react2.default.createElement('div', { ref: function ref(node) {
           return _this6.node = node;
-        } });
+        }, className: 'my-video' });
     }
   }]);
 
@@ -341,7 +341,9 @@ OTPublisher.propTypes = {
 
 OTPublisher.defaultProps = {
   session: null,
-  properties: {},
+  properties: {
+    height: 100, width: 100
+  },
   eventHandlers: null,
   onInit: null,
   onPublish: null,
@@ -460,7 +462,7 @@ var OTSession = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'video-call' },
         childrenWithProps
       );
     }
@@ -523,7 +525,7 @@ function OTStreams(props) {
 
   return _react2.default.createElement(
     'div',
-    null,
+    { className: 'their-video' },
     childrenWithProps
   );
 }
@@ -645,7 +647,7 @@ var OTSubscriber = function (_Component) {
       var subscriberId = this.subscriberId;
 
 
-      var subscriber = this.props.session.subscribe(this.props.stream, container, this.props.properties, function (err) {
+      var subscriber = this.props.session.subscribe(this.props.stream, container, Object.assign({}, this.props.properties, { height: 500, width: 500 }), function (err) {
         if (subscriberId !== _this3.subscriberId) {
           // Either this subscriber has been recreated or the
           // component unmounted so don't invoke any callbacks
@@ -1180,7 +1182,7 @@ var Publisher = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'my-video' },
         this.state.error ? _react2.default.createElement(
           'div',
           null,
@@ -1190,8 +1192,7 @@ var Publisher = function (_Component) {
           session: this.props.session,
           properties: {
             publishAudio: this.state.audio,
-            publishVideo: this.state.video,
-            videoSource: this.state.videoSource === 'screen' ? 'screen' : undefined
+            publishVideo: this.state.video
           },
           onError: this.onError
         }),

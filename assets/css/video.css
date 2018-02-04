@@ -1,0 +1,22 @@
+.video-call{
+    position: relative;
+    max-width: 500px;
+}
+
+.my-video{
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    z-index: 10;
+    border-radius: 100px;
+}
+
+.their-video > div > div > div, .my-video > div{
+    border-radius: 100%;
+}
+
+.their-video{
+    position: absolute;
+    top: 0;
+    right: 0;
+}

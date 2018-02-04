@@ -34,14 +34,13 @@ export default class Publisher extends Component {
 
   render() {
     return (
-      <div>
+      <div className="my-video">
         {this.state.error ? <div>{this.state.error}</div> : null}
         <OTPublisher
           session={this.props.session}
           properties={{
             publishAudio: this.state.audio,
             publishVideo: this.state.video,
-            videoSource: this.state.videoSource === 'screen' ? 'screen' : undefined
           }}
           onError={this.onError}
         />

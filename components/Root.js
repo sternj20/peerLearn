@@ -12,7 +12,6 @@ export default class Root extends Component{
     render(){
         return (
             <div>
-                Test2
                 <Video
                     apiKey={config.API_KEY}
                     sessionId={config.SESSION_ID}
