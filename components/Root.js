@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 // import { render } from 'react-dom';
 
 import config from '../config';
+import Splash from "./Splash/Splash.js"
 import Video from './video_components/Video';
 
 export default class Root extends Component{
@@ -12,6 +13,7 @@ export default class Root extends Component{
     render(){
         return (
             <div>
+                <Splash/>
                 <Video
                     apiKey={config.API_KEY}
                     sessionId={config.SESSION_ID}
