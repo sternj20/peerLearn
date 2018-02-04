@@ -34,28 +34,18 @@ export default class Publisher extends Component {
 
   render() {
     return (
-      <div>
+      <div className="my-video">
         {this.state.error ? <div>{this.state.error}</div> : null}
         <OTPublisher
           session={this.props.session}
           properties={{
             publishAudio: this.state.audio,
             publishVideo: this.state.video,
-            videoSource: this.state.videoSource === 'screen' ? 'screen' : undefined
           }}
           onError={this.onError}
         />
         
-        <CheckBox
-          label="Publish Audio"
-          initialChecked={this.state.audio}
-          onChange={this.setAudio}
-        />
-        <CheckBox
-          label="Publish Video"
-          initialChecked={this.state.video}
-          onChange={this.setVideo}
-        />
+        
       </div>
     );
   }
@@ -75,3 +65,14 @@ export default class Publisher extends Component {
   initialChecked={this.state.videoSource}
   onChange={this.setVideoSource}
 /> */
+
+// <CheckBox
+//   label="Publish Audio"
+//   initialChecked={this.state.audio}
+//   onChange={this.setAudio}
+// />
+//   <CheckBox
+//     label="Publish Video"
+//     initialChecked={this.state.video}
+//     onChange={this.setVideo}
+//   />

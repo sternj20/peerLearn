@@ -59,7 +59,7 @@ export default class OTSubscriber extends Component {
     const subscriber = this.props.session.subscribe(
       this.props.stream,
       container,
-      this.props.properties,
+      Object.assign({}, this.props.properties, {height: 300, width: 300}),
       (err) => {
         if (subscriberId !== this.subscriberId) {
           // Either this subscriber has been recreated or the

@@ -2,10 +2,11 @@ import React, {Component} from 'react';
 // import { render } from 'react-dom';
 
 import config from '../config';
+import VideoPage from './VideoPage/VideoPage';
 import Splash from "./Splash/Splash.js"
-import LearningOptions from "./LearningOptions/LearningOptions";
 import DescribePartner from "./DescribePartner/DescribePartner";
-import Video from './video_components/Video';
+import LearningOptions from "./LearningOptions/LearningOptions";
+
 
 export default class Root extends Component{
     constructor(props){
@@ -15,16 +16,11 @@ export default class Root extends Component{
     render(){
         return (
             <div>
+                <Splash/>
+                <VideoPage />
                 {/* <Splash/> */}
+                {/* <DescribePartner/> */}
                 {/* <LearningOptions/> */}
-                <DescribePartner/>
-                {/* <Video
-                    apiKey={config.API_KEY}
-                    sessionId={config.SESSION_ID}
-                    token={config.TOKEN}
-                    loadingDelegate={<div>Loading...</div>}
-                    opentokClientUrl="https://static.opentok.com/v2/js/opentok.min.js"
-                /> */}
             </div>
         )
     }

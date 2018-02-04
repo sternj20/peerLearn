@@ -219,36 +219,40 @@ var LearningOptions = function LearningOptions() {
                     null,
                     "What activity do you want to work on?"
                 )
+            )
+        ),
+        _react2.default.createElement(
+            "div",
+            { className: "row btnContainer" },
+            _react2.default.createElement(
+                "btn",
+                { className: "col-sm-10" },
+                "Meditate"
             ),
             _react2.default.createElement(
-                "div",
-                { className: "btnContainer" },
-                _react2.default.createElement(
-                    "btn",
-                    { className: "btn-lg col-sm-10" },
-                    "Meditate"
-                ),
-                _react2.default.createElement(
-                    "btn",
-                    { className: "btn-lg col-sm-10" },
-                    "Assertive role play"
-                ),
-                _react2.default.createElement(
-                    "btn",
-                    { className: "btn-lg col-sm-10" },
-                    "Listen"
-                ),
-                _react2.default.createElement(
-                    "btn",
-                    { className: "btn-lg col-sm-10" },
-                    "Be heard"
-                ),
-                _react2.default.createElement(
-                    "btn",
-                    { className: "btn-lg col-sm-10" },
-                    "Listen and be heard"
-                )
+                "btn",
+                { className: "col-sm-10" },
+                "Assertive role play"
             ),
+            _react2.default.createElement(
+                "btn",
+                { className: "col-sm-10" },
+                "Listen"
+            ),
+            _react2.default.createElement(
+                "btn",
+                { className: "col-sm-10" },
+                "Be heard"
+            ),
+            _react2.default.createElement(
+                "btn",
+                { className: "col-sm-10" },
+                "Listen and be heard"
+            )
+        ),
+        _react2.default.createElement(
+            "div",
+            { className: "row" },
             _react2.default.createElement(
                 "div",
                 { className: "col-sm-12" },
@@ -257,7 +261,11 @@ var LearningOptions = function LearningOptions() {
                     null,
                     "Choose activity"
                 )
-            ),
+            )
+        ),
+        _react2.default.createElement(
+            "div",
+            { className: "row" },
             _react2.default.createElement(
                 "btn",
                 { className: "btn-lg col-sm-10" },
@@ -353,7 +361,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Splash = function Splash() {
     return _react2.default.createElement(
         "div",
-        { className: "splashContainer jumbotron" },
+        { className: "container" },
         _react2.default.createElement(
             "div",
             { className: "row" },
@@ -369,19 +377,27 @@ var Splash = function Splash() {
         ),
         _react2.default.createElement(
             "div",
-            { className: "imgs" },
-            "IMGS GO HERE"
+            { className: "row" },
+            _react2.default.createElement(
+                "div",
+                { className: "imgs" },
+                "IMGS GO HERE"
+            )
         ),
         _react2.default.createElement(
             "div",
-            { className: "splashText col-md-12" },
+            { className: "row" },
             _react2.default.createElement(
-                "h2",
-                null,
+                "div",
+                { className: "splashText col-md-12" },
                 _react2.default.createElement(
-                    "i",
+                    "h2",
                     null,
-                    "Personal development with like-minded people to grow together"
+                    _react2.default.createElement(
+                        "i",
+                        null,
+                        "Personal development with like-minded people to grow together"
+                    )
                 )
             ),
             _react2.default.createElement(
@@ -846,7 +862,7 @@ var OTSession = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'video-call' },
         childrenWithProps
       );
     }
@@ -892,9 +908,27 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// import userPlaceHolder from './assets/user_placeholder.png'
 function OTStreams(props) {
   if (!props.session) {
-    return _react2.default.createElement('div', null);
+    console.log("NOTHING TO SHOW");
+    return _react2.default.createElement(
+      'div',
+      { className: 'their-video' },
+      _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement('img', { src: 'https://www.communitylandtrust.ca/wp-content/uploads/2015/10/placeholder.png' })
+          )
+        )
+      )
+    );
   }
 
   var child = _react.Children.only(props.children);
@@ -906,12 +940,32 @@ function OTStreams(props) {
       key: stream.id
     }) : child;
   }) : null;
-
-  return _react2.default.createElement(
-    'div',
-    null,
-    childrenWithProps
-  );
+  if (props.streams.length === 0) {
+    console.log("NOTHING TO SHOW");
+    return _react2.default.createElement(
+      'div',
+      { className: 'their-video' },
+      _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement('img', { className: 'placeholder ', src: 'https://www.communitylandtrust.ca/wp-content/uploads/2015/10/placeholder.png' })
+          )
+        )
+      )
+    );
+  } else {
+    return _react2.default.createElement(
+      'div',
+      { className: 'their-video' },
+      childrenWithProps
+    );
+  }
 }
 
 OTStreams.propTypes = {
@@ -1031,7 +1085,7 @@ var OTSubscriber = function (_Component) {
       var subscriberId = this.subscriberId;
 
 
-      var subscriber = this.props.session.subscribe(this.props.stream, container, this.props.properties, function (err) {
+      var subscriber = this.props.session.subscribe(this.props.stream, container, Object.assign({}, this.props.properties, { height: 300, width: 300 }), function (err) {
         if (subscriberId !== _this3.subscriberId) {
           // Either this subscriber has been recreated or the
           // component unmounted so don't invoke any callbacks
@@ -1566,7 +1620,7 @@ var Publisher = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'my-video' },
         this.state.error ? _react2.default.createElement(
           'div',
           null,
@@ -1576,20 +1630,9 @@ var Publisher = function (_Component) {
           session: this.props.session,
           properties: {
             publishAudio: this.state.audio,
-            publishVideo: this.state.video,
-            videoSource: this.state.videoSource === 'screen' ? 'screen' : undefined
+            publishVideo: this.state.video
           },
           onError: this.onError
-        }),
-        _react2.default.createElement(_CheckBox2.default, {
-          label: 'Publish Audio',
-          initialChecked: this.state.audio,
-          onChange: this.setAudio
-        }),
-        _react2.default.createElement(_CheckBox2.default, {
-          label: 'Publish Video',
-          initialChecked: this.state.video,
-          onChange: this.setVideo
         })
       );
     }
@@ -1612,6 +1655,17 @@ var Publisher = function (_Component) {
   initialChecked={this.state.videoSource}
   onChange={this.setVideoSource}
 /> */
+
+// <CheckBox
+//   label="Publish Audio"
+//   initialChecked={this.state.audio}
+//   onChange={this.setAudio}
+// />
+//   <CheckBox
+//     label="Publish Video"
+//     initialChecked={this.state.video}
+//     onChange={this.setVideo}
+//   />
 
 
 exports.default = Publisher;
@@ -1782,16 +1836,6 @@ var Subscriber = function (_Component) {
             subscribeToVideo: this.state.video
           },
           onError: this.onError
-        }),
-        _react2.default.createElement(_CheckBox2.default, {
-          label: 'Subscribe to Audio',
-          initialChecked: this.state.audio,
-          onChange: this.setAudio
-        }),
-        _react2.default.createElement(_CheckBox2.default, {
-          label: 'Subscribe to Video',
-          initialChecked: this.state.video,
-          onChange: this.setVideo
         })
       );
     }
@@ -1799,6 +1843,18 @@ var Subscriber = function (_Component) {
 
   return Subscriber;
 }(_react.Component);
+
+// <CheckBox
+//   label="Subscribe to Audio"
+//   initialChecked={this.state.audio}
+//   onChange={this.setAudio}
+// />
+//   <CheckBox
+//     label="Subscribe to Video"
+//     initialChecked={this.state.video}
+//     onChange={this.setVideo}
+//   />
+
 
 exports.default = Subscriber;
 
@@ -1891,7 +1947,6 @@ var App = function (_Component) {
           null,
           this.state.error
         ) : null,
-        _react2.default.createElement(_ConnectionStatus2.default, { connected: this.state.connected }),
         _react2.default.createElement(_Publisher2.default, null),
         _react2.default.createElement(
           _src.OTStreams,
@@ -1906,6 +1961,9 @@ var App = function (_Component) {
 }(_react.Component);
 
 exports.default = (0, _src.preloadScript)(App);
+
+
+{/* <ConnectionStatus connected={this.state.connected} /> */}
 
 },{"../../config":20,"../src":12,"./ConnectionStatus":15,"./Publisher":16,"./Subscriber":18,"react":221}],20:[function(require,module,exports){
 'use strict';

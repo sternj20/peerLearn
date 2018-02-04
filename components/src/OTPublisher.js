@@ -127,7 +127,8 @@ export default class OTPublisher extends Component {
         this.props.onError(err);
       }
     });
-
+    properties.width = 100;
+    properties.height = 100;
     const publisher = OT.initPublisher(container, properties, (err) => {
       if (publisherId !== this.publisherId) {
         // Either this publisher has been recreated or the
@@ -167,7 +168,7 @@ export default class OTPublisher extends Component {
   }
 
   render() {
-    return <div ref={node => (this.node = node)} />;
+    return <div ref={node => (this.node = node)} className="my-video"/>;
   }
 }
 
@@ -190,7 +191,9 @@ OTPublisher.propTypes = {
 
 OTPublisher.defaultProps = {
   session: null,
-  properties: {},
+  properties: {
+    height:100, width: 100
+  },
   eventHandlers: null,
   onInit: null,
   onPublish: null,

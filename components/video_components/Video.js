@@ -43,7 +43,6 @@ class App extends Component {
         onError={this.onError}
       >
         {this.state.error ? <div>{this.state.error}</div> : null}
-        <ConnectionStatus connected={this.state.connected} />
         <Publisher />
         <OTStreams>
           <Subscriber />
@@ -54,3 +53,5 @@ class App extends Component {
 }
 
 export default preloadScript(App);
+
+{/* <ConnectionStatus connected={this.state.connected} /> */}
