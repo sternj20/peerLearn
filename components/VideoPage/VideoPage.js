@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Video from '../video_components/Video'
 import config from '../../config'
-
+import {Link} from "react-router-dom"
 export default class VideoPage extends Component {
     constructor(props) {
         super(props)
@@ -11,6 +11,8 @@ export default class VideoPage extends Component {
         return (
             <div>
                 <div>
+                <button><Link to="/rating">Continue</Link></button>
+
                     <Video
                         className="video-screen"
                         apiKey={this.props.apiKey}

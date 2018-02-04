@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 const hideLoader = () => {
 	console.log('working')
-	window.setTimeout(showUser, 5000)
+	window.setTimeout(showUser, 1000)
 }
 const showUser = () => {
 	document.querySelector(".loader").style.display="none"
@@ -16,7 +16,7 @@ const Loader = () => {
 		<div>
 			<div className="loader"></div>
 			<div className="loadingText">Searching for users...</div>
-			<div className="user">You have matched with. Have fun!
+			<div className="user">
       	<btn className="btn-lg col-sm-10"><Link to="/video">Start session</Link></btn>
       </div>
 		</div>

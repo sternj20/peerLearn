@@ -7,8 +7,11 @@ import Splash from "./Splash/Splash"
 import DescribePartner from "./DescribePartner/DescribePartner";
 import LearningOptions from "./LearningOptions/LearningOptions";
 import Loader from "./Loader/Loader";
+import UserProfile from "./UserProfile/UserProfile";
 import MeditateInstruct from "./MeditateInstruct/MeditateInstruct"
 import AssertInstruct from "./AssertInstruct/AssertInstruct"
+import Rating from "./Rating/Rating"
+
 
 
 const renderMergedProps = (component, ...rest) => {
@@ -30,7 +33,7 @@ export default class Root extends Component{
         super(props)
         this.state = {
             hasCredentials: false,
-            auth: false,
+            auth: true,
             loading: true
         }
     }
@@ -75,6 +78,8 @@ export default class Root extends Component{
                     <Route path="/meditate" component={MeditateInstruct}/>
                     <Route path="/assert" component={AssertInstruct}/>
                     <PropsRoute path="/video" component={VideoPage} apiKey={this.state.apiKey} sessionId={this.state.sessionId} token={this.state.token}/>
+                    <Route path="/rating" component={Rating}/>
+                    <Route path="/user" component={UserProfile}/>
                 </Switch>
             )
     }
