@@ -1,4 +1,6 @@
 import React from "react";
+import {Link, Redirect} from "react-router-dom";
+
 
 const LearningOptions = () => {
     return(
@@ -10,17 +12,14 @@ const LearningOptions = () => {
             </div>
             
                 <div className="row btnContainer">
-                    <btn className="col-sm-10">Meditate</btn>
-                    <btn className="col-sm-10">Assertive role play</btn>
-                    <btn className="col-sm-10">Listen</btn>
-                    <btn className="col-sm-10">Be heard</btn>
-                    <btn className="col-sm-10">Listen and be heard</btn>
+                    <btn className="btn-lg col-sm-10">Meditate</btn>
+                    <btn className="btn-lg col-sm-10">Assertive role play</btn>
                 </div>
             <div className="row">                
                 <div className="col-sm-12"><h2>Choose activity</h2></div>
             </div>
             <div className="row">            
-                <btn className="btn-lg col-sm-10">Next</btn>
+                <btn className="btn-lg col-sm-10"><Link to="/loading">Next</Link></btn>
             </div>
         </div>            
     )
