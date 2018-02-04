@@ -508,9 +508,27 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// import userPlaceHolder from './assets/user_placeholder.png'
 function OTStreams(props) {
   if (!props.session) {
-    return _react2.default.createElement('div', null);
+    console.log("NOTHING TO SHOW");
+    return _react2.default.createElement(
+      'div',
+      { className: 'their-video' },
+      _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement('img', { src: 'https://www.communitylandtrust.ca/wp-content/uploads/2015/10/placeholder.png' })
+          )
+        )
+      )
+    );
   }
 
   var child = _react.Children.only(props.children);
@@ -522,12 +540,32 @@ function OTStreams(props) {
       key: stream.id
     }) : child;
   }) : null;
-
-  return _react2.default.createElement(
-    'div',
-    { className: 'their-video' },
-    childrenWithProps
-  );
+  if (props.streams.length === 0) {
+    console.log("NOTHING TO SHOW");
+    return _react2.default.createElement(
+      'div',
+      { className: 'their-video' },
+      _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement('img', { className: 'placeholder ', src: 'https://www.communitylandtrust.ca/wp-content/uploads/2015/10/placeholder.png' })
+          )
+        )
+      )
+    );
+  } else {
+    return _react2.default.createElement(
+      'div',
+      { className: 'their-video' },
+      childrenWithProps
+    );
+  }
 }
 
 OTStreams.propTypes = {
@@ -1195,16 +1233,6 @@ var Publisher = function (_Component) {
             publishVideo: this.state.video
           },
           onError: this.onError
-        }),
-        _react2.default.createElement(_CheckBox2.default, {
-          label: 'Publish Audio',
-          initialChecked: this.state.audio,
-          onChange: this.setAudio
-        }),
-        _react2.default.createElement(_CheckBox2.default, {
-          label: 'Publish Video',
-          initialChecked: this.state.video,
-          onChange: this.setVideo
         })
       );
     }
@@ -1227,6 +1255,17 @@ var Publisher = function (_Component) {
   initialChecked={this.state.videoSource}
   onChange={this.setVideoSource}
 /> */
+
+// <CheckBox
+//   label="Publish Audio"
+//   initialChecked={this.state.audio}
+//   onChange={this.setAudio}
+// />
+//   <CheckBox
+//     label="Publish Video"
+//     initialChecked={this.state.video}
+//     onChange={this.setVideo}
+//   />
 
 
 exports.default = Publisher;

@@ -45,16 +45,7 @@ export default class Publisher extends Component {
           onError={this.onError}
         />
         
-        <CheckBox
-          label="Publish Audio"
-          initialChecked={this.state.audio}
-          onChange={this.setAudio}
-        />
-        <CheckBox
-          label="Publish Video"
-          initialChecked={this.state.video}
-          onChange={this.setVideo}
-        />
+        
       </div>
     );
   }
@@ -74,3 +65,14 @@ export default class Publisher extends Component {
   initialChecked={this.state.videoSource}
   onChange={this.setVideoSource}
 /> */
+
+// <CheckBox
+//   label="Publish Audio"
+//   initialChecked={this.state.audio}
+//   onChange={this.setAudio}
+// />
+//   <CheckBox
+//     label="Publish Video"
+//     initialChecked={this.state.video}
+//     onChange={this.setVideo}
+//   />
