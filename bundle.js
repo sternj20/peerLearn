@@ -631,7 +631,7 @@ var Splash = function Splash(props) {
             _react2.default.createElement(
                 "div",
                 { className: "imgs" },
-                "IMGS GO HERE"
+                _react2.default.createElement("img", { src: "../../assets/phil-coffman-161251.jpg", className: "splashImg" })
             )
         ),
         _react2.default.createElement(
@@ -652,10 +652,10 @@ var Splash = function Splash(props) {
             ),
             _react2.default.createElement(
                 "div",
-                { className: "login col-md-12" },
+                { className: "row" },
                 _react2.default.createElement(
                     "div",
-                    null,
+                    { className: "col-md-4" },
                     _react2.default.createElement(
                         "label",
                         null,
@@ -669,7 +669,7 @@ var Splash = function Splash(props) {
                 ),
                 _react2.default.createElement(
                     "div",
-                    null,
+                    { className: "col-md-4" },
                     _react2.default.createElement(
                         "label",
                         null,
@@ -682,9 +682,13 @@ var Splash = function Splash(props) {
                     _react2.default.createElement("input", { type: "password", className: "pw", placeholder: "Enter Password", name: "psw", required: true })
                 ),
                 _react2.default.createElement(
-                    "button",
-                    { className: "btn-lg demoBtn col-md-6 footer", onClick: props.login },
-                    "Login"
+                    "div",
+                    { className: "col-md-4" },
+                    _react2.default.createElement(
+                        "button",
+                        { className: "btn-lg footer", onClick: props.login },
+                        "Login"
+                    )
                 )
             )
         )
